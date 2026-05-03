@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        LSPosed 模块声明
+        xposedminversion : 最低 XposedBridge 版本要求
+        xposeddescription: 模块描述（显示在 LSPosed Manager 中）
+        xposedscope      : 作用域，此处限定微信包名
+    -->
+    <application
+        android:label="@string/app_name"
+        android:description="@string/app_desc"
+        android:allowBackup="false"
+        android:supportsRtl="true">
+
+        <!-- LSPosed 模块标识 Meta-data -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+
+        <meta-data
+            android:name="xposedminversion"
+            android:value="93" />
+
+        <meta-data
+            android:name="xposeddescription"
+            android:value="屏蔽微信热更新：拦截网络请求 + 阻止补丁文件写入 + 禁用热补丁加载" />
+
+        <!--
+            xposedscope 声明模块仅作用于微信。
+            LSPosed 会在 Manager 中将微信预设为建议作用域。
+        -->
+        <meta-data
+            android:name="xposedscope"
+            android:value="com.tencent.mm" />
+
+    </application>
+
+</manifest>
